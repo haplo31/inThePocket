@@ -1,0 +1,70 @@
+<ion-view>
+  <ion-content scroll="false">
+  <div class="quickTraining">
+  	<div class="backHome">
+  		<button class="button icon ion-home" ui-sref="home"></button>
+  	</div>
+  	<div class="titleBlock">
+ 			<h1>Entrainement</h1>
+ 			<h1>rapide</h1>
+ 		</div>
+ 		<div class="quickSettings" ng-show="trainingLaunched === false">
+ 			<h2>Durée</h2>
+ 			<div class="duration">
+ 				<label class="block" ng-class="{durationSelected:duration === 5}">
+ 				<input type="radio" ng-model="duration" ng-value="5">
+  			5min
+  			</label>
+  			<label class="block" ng-class="{durationSelected:duration === 15}">
+ 				<input type="radio" ng-model="duration" ng-value="15">
+  			15min
+  			</label>
+  			<label class="block" ng-class="{durationSelected:duration === 30}">
+ 				<input type="radio" ng-model="duration" ng-value="30">
+  			30min
+  			</label>
+  			</label>
+  			<label class="block" ng-class="{durationSelected:duration === 0}">
+ 				<input type="radio" ng-model="duration" ng-value="0">
+  			Continu
+  			</label> 				
+ 			</div>
+ 			<h2>Niveau</h2>
+ 			<div class="difficulty">
+ 				<label class="block" ng-class="{difficultySelected:difficulty === 'easy'}">
+ 				<input type="radio" ng-model="difficulty" ng-value="'easy'">
+  			Facile
+  			</label>
+  			<label class="block" ng-class="{difficultySelected:difficulty === 'medium'}">
+ 				<input type="radio" ng-model="difficulty" ng-value="'medium'">
+  			Moyen
+  			</label>
+  			<label class="block" ng-class="{difficultySelected:difficulty === 'hard'}">
+ 				<input type="radio" ng-model="difficulty" ng-value="'hard'">
+  			Difficile
+  			</label>
+ 			</div>
+ 			<h2>Catégorie</h2>
+ 			<div class="topics">
+ 				<select ng-model="topics">
+ 					<option value="allTopics">Toutes les catégories</option>
+      		<option ng-repeat="(key, topic) in availableTopics" value="topic">{{topic}}</option>
+    		</select>
+ 			</div>
+ 		</div>
+ 		<div class="quickStats" ng-show="trainingLaunched === true">
+ 			<span class="stats">Phrases passées: <b>{{skip}}</b></span>
+ 			<span class="stats">Phrases réussies:<b>{{good}}</b></span>
+ 			<span class="stats">Phrases prononcées:<b>{{good+bad}}</b></span>
+      <span class="currentSentence" ng-show="currentSentence">{{currentSentence}}</span>
+      <span class="recognizedText" ng-show="recognizedText && recognizedText !== 'skip' && currentSentence !== recognizedText">{{recognizedText}}</span>
+ 		</div>
+		<div class="launchBlock" ng-show="trainingLaunched === false">
+			<button class="launchButton" ng-click="launch()">DEMARRER</button>
+		</div>
+		<div class="launchBlock" ng-show="trainingLaunched === true">
+			<button class="launchButton" ng-click="stop()">ARRETER</button>
+		</div>
+ 	</div>
+  </ion-content>
+</ion-view>
