@@ -1,0 +1,34 @@
+<ion-view>
+  <ion-content scroll="false">
+    <div class="settings">
+      <h1>{{$root.dT.settings.title[$root.displayLang]}}</h1>
+      <div class="settingsBlock">
+        <h2>{{$root.dT.settings.originLanguage[$root.displayLang]}}</h2>
+        <div class="language originLanguage">
+          <span ng-show="languages.originLang.lang">{{languages.originLang.lang}}</span>
+          <button ng-show="languages.originLang.lang" ng-click="changeOriginLang()">{{$root.dT.settings.change[$root.displayLang]}}</button>
+          <select ng-model="languages.originLang" ng-hide="languages.originLang.lang" >
+            <option ng-repeat="(key, lang) in availableLangOrigin" value="{{lang}}">{{lang.lang}}</option>
+          </select>
+        </div>
+        <h2>{{$root.dT.settings.trainingLanguage[$root.displayLang]}}</h2>
+        <div class="language destLanguage">
+          <span ng-show="languages.destLang.lang">{{languages.destLang.lang}}</span>
+          <button ng-show="languages.destLang.lang" ng-click="changeDestLang()">{{$root.dT.settings.change[$root.displayLang]}}</button>
+          <select ng-model="languages.destLang" ng-hide="languages.destLang.lang">
+            <option ng-repeat="(key, lang) in availableLang" value="{{lang}}">{{lang.lang}}</option>
+          </select>
+        </div>
+        <h2>{{$root.dT.settings.speedOfSpeech[$root.displayLang]}}</h2>
+        <div class="TTSSpeed">
+          <div class="item range range-positive">
+            <span>{{$root.dT.settings.slow[$root.displayLang]}}</span>
+            <input type="range" ng-model="languages.speed" name="speed" min="5" max="10" value="10">
+            <span>{{$root.dT.settings.regular[$root.displayLang]}}</span>
+          </div>
+        </div>
+      </div>
+      <button class="button saveButton" ng-click="save()">{{$root.dT.settings.save[$root.displayLang]}}</button>
+    </div>
+  </ion-content>
+</ion-view>

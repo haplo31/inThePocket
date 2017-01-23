@@ -1,0 +1,145 @@
+<ion-view>
+  <ion-content scroll="false">
+  <div class="quickTraining">
+  	<div class="backHome">
+  		<button class="button icon ion-home" ui-sref="home" ng-click="goHome()"></button>
+  	</div>
+<!--   	<div class="titleBlock" ng-hide="trainingEnded === true">
+ 			<h1>{{$root.dT.quick.title1[$root.displayLang]}}</h1>
+ 			<h1>{{$root.dT.quick.title2[$root.displayLang]}}</h1>
+ 		</div> -->
+ 		<div class="quickSettings" ng-show="trainingLaunched === false && trainingLaunching === false && trainingEnded === false">
+ 			<h2>{{$root.dT.quick.duration[$root.displayLang]}}</h2>
+ 			<div class="duration">
+ 				<label class="block" ng-class="{durationSelected:training.duration === 5}">
+ 				<input type="radio" ng-model="training.duration" ng-value="5">
+  			5min
+  			</label>
+  			<label class="block" ng-class="{durationSelected:training.duration === 15}">
+ 				<input type="radio" ng-model="training.duration" ng-value="15">
+  			15min
+  			</label>
+  			<label class="block" ng-class="{durationSelected:training.duration === 30}">
+ 				<input type="radio" ng-model="training.duration" ng-value="30">
+  			30min
+  			</label>
+  			</label>
+  			<label class="block" ng-class="{durationSelected:training.duration === 0}">
+ 				<input type="radio" ng-model="training.duration" ng-value="0">
+  			{{$root.dT.quick.nolimit[$root.displayLang]}}
+  			</label> 				
+ 			</div>
+ 			<h2>{{$root.dT.quick.level[$root.displayLang]}}</h2>
+ 			<div class="difficulty">
+ 				<label class="block" ng-class="{difficultySelected:difficulty === 'easy'}">
+ 				<input type="radio" ng-model="difficulty" ng-value="'easy'">
+  			{{$root.dT.quick.easy[$root.displayLang]}}
+  			</label>
+  			<label class="block" ng-class="{difficultySelected:difficulty === 'medium'}">
+ 				<input type="radio" ng-model="difficulty" ng-value="'medium'">
+  			{{$root.dT.quick.medium[$root.displayLang]}}
+  			</label>
+  			<label class="block" ng-class="{difficultySelected:difficulty === 'hard'}">
+ 				<input type="radio" ng-model="difficulty" ng-value="'hard'">
+  			{{$root.dT.quick.hard[$root.displayLang]}}
+  			</label>
+ 			</div>
+ 			<h2>{{$root.dT.quick.topic[$root.displayLang]}}</h2>
+ 			<div class="topics">
+        <span ng-class="{selected: topics.selected.indexOf(value.name)>=0}" ng-repeat="(key, value) in $root.dT.quick.topics" >
+          <!-- {{value[$root.displayLang]}} -->
+          <i class="icon ion-ios-home" ng-show="value['English'] === 'House'"></i>
+          <i class="icon ion-android-bus" ng-show="value['English'] === 'Transports'"></i>
+          <i class="icon ion-leaf" ng-show="value['English'] === 'Nature'"></i>
+          <i class="icon ion-ios-body" ng-show="value['English'] === 'Body'"></i>
+          <i class="icon ion-medkit" ng-show="value['English'] === 'Health'"></i>
+          <i class="icon ion-bowtie" ng-show="value['English'] === 'Clothing'"></i>
+          <i class="icon ion-monitor" ng-show="value['English'] === 'Computers'"></i>
+          <i class="icon ion-ios-football" ng-show="value['English'] === 'Sports'"></i>
+          <i class="icon ion-fork" ng-show="value['English'] === 'Food'"></i>
+          <i class="icon ion-ios-paw" ng-show="value['English'] === 'Animals'"></i>
+        </span>
+        <span class="nbSentences">{{$root.dT.quick.nbSentences[$root.displayLang]}}{{sentencesAvailable}} / {{totalSentencesAvailable}}</span>
+        <button ng-click="changeTopics = true">{{$root.dT.settings.change[$root.displayLang]}}</button>
+        <div class="topicsChange" ng-show="changeTopics === true">
+          <span ng-class="{selected: topics.selected.indexOf(value.name)>=0}" ng-repeat="(key, value) in $root.dT.quick.topics" ng-click="changeTopic(value.name)">
+            <i class="icon ion-ios-home" ng-show="value['English'] === 'House'"></i>
+            <i class="icon ion-android-bus" ng-show="value['English'] === 'Transports'"></i>
+            <i class="icon ion-leaf" ng-show="value['English'] === 'Nature'"></i>
+            <i class="icon ion-ios-body" ng-show="value['English'] === 'Body'"></i>
+            <i class="icon ion-medkit" ng-show="value['English'] === 'Health'"></i>
+            <i class="icon ion-bowtie" ng-show="value['English'] === 'Clothing'"></i>
+            <i class="icon ion-monitor" ng-show="value['English'] === 'Computers'"></i>
+            <i class="icon ion-ios-football" ng-show="value['English'] === 'Sports'"></i>
+            <i class="icon ion-fork" ng-show="value['English'] === 'Food'"></i>
+            <i class="icon ion-ios-paw" ng-show="value['English'] === 'Animals'"></i>
+            {{value[$root.displayLang]}}
+          </span>
+          <button class="button saveButton" ng-click="changeTopics = false">{{$root.dT.settings.save[$root.displayLang]}}</button>
+        </div>
+ 			</div>
+ 		</div>
+    <div class="quickPendingLaunch" ng-show="trainingLaunching === true">
+      <div class="instructions">
+        <span>{{$root.dT.quick.skipInstructions[$root.displayLang]}}{{$root.dT.quick.skip[$root.destLang.lang]}}</span>
+        <span>{{$root.dT.quick.translateInstructions[$root.displayLang]}}{{$root.dT.quick.translate[$root.destLang.lang]}}</span>
+      </div>
+      <div class="pointToCheck" ng-class="{checked:verifyingPermissions === true}">
+        <div class="spinnerBlock">
+          <ion-spinner ng-hide="verifyingPermissions === true"></ion-spinner>
+          <i class="icon ion-checkmark" ng-show="verifyingPermissions === true"></i>
+        </div> 
+        <span>{{$root.dT.quick.permVerification[$root.displayLang]}}</span>
+      </div>
+      <div class="pointToCheck" ng-class="{checked:launchingTTS === true}">
+        <div class="spinnerBlock">
+          <ion-spinner ng-show="launchingTTS === false && verifyingPermissions === true"></ion-spinner>
+          <i class="icon ion-checkmark" ng-show="launchingTTS === true"></i>
+        </div>
+        <span>{{$root.dT.quick.vocalPreparation[$root.displayLang]}}</span>
+      </div>
+      <div class="pointToCheck">
+        <div class="spinnerBlock">
+          <ion-spinner ng-show="launchingTTS === true && verifyingPermissions === true"></ion-spinner>
+        </div>
+        <span>{{$root.dT.quick.launchingTraining[$root.displayLang]}}</span>
+      </div>
+    </div>
+ 		<div class="quickStats" ng-show="trainingLaunched === true">
+      <div class="instructions">
+        <span>{{$root.dT.quick.skipInstructions[$root.displayLang]}}{{$root.dT.quick.skip[$root.destLang.lang]}}</span>
+        <span>{{$root.dT.quick.translateInstructions[$root.displayLang]}}{{$root.dT.quick.translate[$root.destLang.lang]}}</span>
+      </div>
+      <div class="statsBlock">
+ 			  <div class="stats">{{$root.dT.quick.sentencesPassed[$root.displayLang]}}:<span class="value">{{skip}}</span></div>
+ 			  <div class="stats">{{$root.dT.quick.sentencesGood[$root.displayLang]}}:<span class="value">{{good}}</span></div>
+ 			  <div class="stats">{{$root.dT.quick.sentencesTotal[$root.displayLang]}}:<span class="value">{{good+bad}}</span></div>
+      </div>
+      <div class="sentencesBlock">
+        <span class="currentSentence" ng-show="currentSentence">{{currentSentence[$root.destLang.lang] | capitalize}}</span>
+        <span class="recognizedText" ng-show="recognizedText && recognizedText !== 'skip' && currentSentence !== recognizedText">{{recognizedText | capitalize}}</span>
+      </div>
+    </div>
+
+    <div class="quickEnded" ng-show="trainingEnded === true">
+      <h1>{{$root.dT.quick.endedTitle[$root.displayLang]}}</h1>
+      <div class="statsBlock">
+        <div class="stats"><span>{{$root.dT.quick.sentencesPassed[$root.displayLang]}}:</span><span class="value">{{skip}}</span></div>
+        <div class="stats"><span>{{$root.dT.quick.sentencesGood[$root.displayLang]}}:</span><span class="value">{{good}}</span></div>
+        <div class="stats"><span>{{$root.dT.quick.sentencesTotal[$root.displayLang]}}:</span><span class="value">{{good+bad}}</span></div>
+        <div class="stats best" ng-show="bestScore ===  true">{{$root.dT.quick.bestScore[$root.displayLang]}}</div>
+      </div>
+    </div>
+
+		<div class="launchBlock" ng-show="trainingLaunched === false && trainingLaunching === false && trainingEnded === false">
+			<button class="launchButton" ng-click="launch()">{{$root.dT.quick.start[$root.displayLang]}}</button>
+		</div>
+    <div class="launchBlock" ng-show="restartOnError === true && trainingLaunching === true">
+      <button class="launchButton" ng-click="launch()">{{$root.dT.quick.restart[$root.displayLang]}}</button>
+    </div>
+		<div class="launchBlock" ng-show="trainingLaunched === true">
+			<button class="launchButton" ng-click="stop()">{{$root.dT.quick.stop[$root.displayLang]}}</button>
+		</div>
+ 	</div>
+  </ion-content>
+</ion-view>

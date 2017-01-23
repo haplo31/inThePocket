@@ -1,0 +1,477 @@
+{
+	"home":{
+		"quickTraining":{
+			"English":"Launch",
+			"Français":"Lancer",
+			"Spanish":"Lanzamiento",
+			"Portugese":"Lançamento",
+			"Deutsch":"Starten"
+		},
+		"customTraining":{
+			"English":"Custom Training",
+			"Français":"Entraînement perso",
+			"Spanish":"Entrenamiento Personal",
+			"Portugese":"",
+			"Deutsch":""
+		},
+		"settings":{
+			"English":"Settings",
+			"Français":"Paramètres",
+			"Spanish":"Ajustes",
+			"Portugese":"",
+			"Deutsch":""
+		}
+	},
+	"stats":{
+		"title":{
+			"English":"Statistics",
+			"Français":"Statistiques",
+			"Spanish":"Estadística",
+			"Portugese":"",
+			"Deutsch":""
+		},
+		"bestScore":{
+			"English":"Best Score",
+			"Français":"Meilleur Score",
+			"Spanish":"",
+			"Portugese":"",
+			"Deutsch":""
+		},
+		"dateBS":{
+			"English":"Date:",
+			"Français":"Date:",
+			"Spanish":"",
+			"Portugese":"",
+			"Deutsch":""
+		},
+		"sentencesGoodBS":{
+			"English":"Sucessful sentences:",
+			"Français":"Phrases réussies:",
+			"Spanish":"",
+			"Portugese":"",
+			"Deutsch":""
+		},
+		"sentencesTotalBS":{
+			"English":"Total sentences:",
+			"Français":"Phrases total:",
+			"Spanish":"",
+			"Portugese":"",
+			"Deutsch":""
+		},
+		"noBS":{
+			"English":"No Score Yet",
+			"Français":"Pas encore de meilleur score",
+			"Spanish":"",
+			"Portugese":"",
+			"Deutsch":""
+		},
+		"cbLaterBS":{
+			"English":"Return after some trainings",
+			"Français":"Reviens après avoir réalisé quelques entraînements.",
+			"Spanish":"",
+			"Portugese":"",
+			"Deutsch":""
+		},
+		"utilisation":{
+			"English":"Utilisation",
+			"Français":"Utilisation",
+			"Spanish":"",
+			"Portugese":"",
+			"Deutsch":""
+		},
+		"sentencesTotal":{
+			"English":"Pronounced sentences:",
+			"Français":"Phrases prononcées:",
+			"Spanish":"Ajustes",
+			"Portugese":"",
+			"Deutsch":""
+		},
+		"trainingsEnded":{
+			"English":"Trainings completed:",
+			"Français":"Exercices terminés:",
+			"Spanish":"Ajustes",
+			"Portugese":"",
+			"Deutsch":""
+		},
+		"timeTotal":{
+			"English":"Training Time",
+			"Français":"Temps d'entrainement:",
+			"Spanish":"Ajustes",
+			"Portugese":"",
+			"Deutsch":""
+		}
+	},
+	"settings":{
+		"title":{
+			"English":"Settings",
+			"Français":"Paramètres",
+			"Spanish":"Ajustes",
+			"Portugese":"",
+			"Deutsch":""
+		},
+		"change":{
+			"English":"CHANGE",
+			"Français":"MODIFIER",
+			"Spanish":"CAMBIAR",
+			"Portugese":"",
+			"Deutsch":""
+		},
+		"originLanguage":{
+			"English":"Origin language",
+			"Français":"Langue d'origine",
+			"Spanish":"Lengua original",
+			"Portugese":"",
+			"Deutsch":""
+		},
+		"trainingLanguage":{
+			"English":"Training language",
+			"Français":"Langue d'entraînement",
+			"Spanish":"Lengua entrenamiento",
+			"Portugese":"",
+			"Deutsch":""
+		},
+		"speedOfSpeech":{
+			"English":"Speed of speech",
+			"Français":"Vitesse de dictée",
+			"Spanish":"Velocidad de dictoda",
+			"Portugese":"",
+			"Deutsch":""
+		},
+		"slow":{
+			"English":"SLOW",
+			"Français":"LENT",
+			"Spanish":"LENTA",
+			"Portugese":"",
+			"Deutsch":""
+		},
+		"regular":{
+			"English":"REGULAR",
+			"Français":"NORMAL",
+			"Spanish":"NORMAL",
+			"Portugese":"",
+			"Deutsch":""
+		},
+		"save":{
+			"English":"SAVE",
+			"Français":"ENREGISTRER",
+			"Spanish":"REGISTRO",
+			"Portugese":"",
+			"Deutsch":""
+		}
+	},
+	"quick":{
+		"title1":{
+			"English":"Quick",
+			"Français":"Entrainement",
+			"Spanish":"Entrenamiento",
+			"Portugese":"",
+			"Deutsch":""
+		},
+		"title2":{
+			"English":"training",
+			"Français":"rapide",
+			"Spanish":"rápido",
+			"Portugese":"",
+			"Deutsch":""
+		},
+		"duration":{
+			"English":"Duration",
+			"Français":"Durée",
+			"Spanish":"Duración",
+			"Portugese":"",
+			"Deutsch":""
+		},
+		"nolimit":{
+			"English":"NoLimit",
+			"Français":"Continu",
+			"Spanish":"Continuo",
+			"Portugese":"",
+			"Deutsch":""
+		},
+		"level":{
+			"English":"Level",
+			"Français":"Niveau",
+			"Spanish":"Nivel",
+			"Portugese":"",
+			"Deutsch":""
+		},
+		"easy":{
+			"English":"Easy",
+			"Français":"Facile",
+			"Spanish":"Fácil",
+			"Portugese":"",
+			"Deutsch":""
+		},
+		"medium":{
+			"English":"Medium",
+			"Français":"Moyen",
+			"Spanish":"Medio",
+			"Portugese":"",
+			"Deutsch":""
+		},
+		"hard":{
+			"English":"Hard",
+			"Français":"Difficile",
+			"Spanish":"Difícil",
+			"Portugese":"",
+			"Deutsch":""
+		},
+		"topic":{
+			"English":"Topics",
+			"Français":"Catégories",
+			"Spanish":"Categorías",
+			"Portugese":"",
+			"Deutsch":""
+		},
+		"alltopics":{
+			"English":"All topics",
+			"Français":"Toutes les catégories",
+			"Spanish":"Todas las categorías",
+			"Portugese":"",
+			"Deutsch":""
+		},
+		"topics":[
+			{
+				"name":"house",
+				"English":"House",
+				"Français":"Maison",
+				"Spanish":"",
+				"Portugese":"",
+				"Deutsch":""
+			},{
+				"name":"transports",
+				"English":"Transports",
+				"Français":"Transports",
+				"Spanish":"",
+				"Portugese":"",
+				"Deutsch":""
+			},{
+				"name":"nature",
+				"English":"Nature",
+				"Français":"Nature",
+				"Spanish":"",
+				"Portugese":"",
+				"Deutsch":""
+			},{
+				"name":"body",
+				"English":"Body",
+				"Français":"Corps",
+				"Spanish":"",
+				"Portugese":"",
+				"Deutsch":""
+			},{
+				"name":"health",
+				"English":"Health",
+				"Français":"Santé",
+				"Spanish":"",
+				"Portugese":"",
+				"Deutsch":""
+			},{
+				"name":"clothing",
+				"English":"Clothing",
+				"Français":"Vêtements",
+				"Spanish":"",
+				"Portugese":"",
+				"Deutsch":""
+			},{
+				"name":"computers",
+				"English":"Computers",
+				"Français":"Nouvelles technologies",
+				"Spanish":"Nuevas tecnologías",
+				"Portugese":"",
+				"Deutsch":""
+			},{
+				"name":"sports",
+				"English":"Sports",
+				"Français":"Sports",
+				"Spanish":"",
+				"Portugese":"",
+				"Deutsch":""
+			},{
+				"name":"food",
+				"English":"Food",
+				"Français":"Nourriture",
+				"Spanish":"",
+				"Portugese":"",
+				"Deutsch":""
+			},{
+				"name":"animals",
+				"English":"Animals",
+				"Français":"Animaux",
+				"Spanish":"",
+				"Portugese":"",
+				"Deutsch":""
+			}
+		],
+		"nbSentences":{
+			"English":"Sentences available: ",
+			"Français":"Phrases disponibles: ",
+			"Spanish":"",
+			"Portugese":"",
+			"Deutsch":""
+		},
+		"endedTitle":{
+			"English":"CONGRATULATIONS",
+			"Français":"FÉLICITATIONS",
+			"Spanish":"FELICITATIONES",
+			"Portugese":"",
+			"Deutsch":""
+		},
+		"bestScore":{
+			"English":"You beat your best score!",
+			"Français":"Tu as battu ton meilleur score!",
+			"Spanish":"Mejor puntaje!",
+			"Portugese":"",
+			"Deutsch":""
+		},
+		"start":{
+			"English":"START",
+			"Français":"DÉMARRER",
+			"Spanish":"INICIO",
+			"Portugese":"",
+			"Deutsch":""
+		},
+		"restart":{
+			"English":"RESTART",
+			"Français":"RELANCER",
+			"Spanish":"COMIENZO",
+			"Portugese":"",
+			"Deutsch":""
+		},
+		"stop":{
+			"English":"STOP",
+			"Français":"ARRETER",
+			"Spanish":"PARAR",
+			"Portugese":"",
+			"Deutsch":""
+		},
+		"skipInstructions":{
+			"English":"To skip a sentence, say ",
+			"Français":"Pour passer une phrase, dites ",
+			"Spanish":"Para pasar de una frase, informe a ",
+			"Portugese":"Para pular uma frase, dizer ",
+			"Deutsch":"So lassen Sie einen Satz sagen "
+		},
+		"skip":{
+			"English":"Skip",
+			"Français":"Passer",
+			"Spanish":"Pasar",
+			"Portugese":"Pular",
+			"Deutsch":"Überspringen"
+		},
+		"translateInstructions":{
+			"English":"To translate a sentence, say ",
+			"Français":"Pour traduire une phrase, dites ",
+			"Spanish":"Para traducir la frase, informe a ",
+			"Portugese":"Para traduzir uma frase, dizer ",
+			"Deutsch":"Um sie zu verschieben, einen Satz, "
+		},
+		"translate":{
+			"English":"Translate",
+			"Français":"Traduire",
+			"Spanish":"Traducir",
+			"Portugese":"Traduzir",
+			"Deutsch":"Übersetzen"
+		},
+		"sentencesPassed":{
+			"English":"Sentences Passed",
+			"Français":"Phrases passées",
+			"Spanish":"Frases omitidas",
+			"Portugese":"",
+			"Deutsch":""
+		},
+		"sentencesGood":{
+			"English":"Sentences well pronounced",
+			"Français":"Phrases réussies",
+			"Spanish":"Frases bien pronunciadas",
+			"Portugese":"",
+			"Deutsch":""
+		},
+		"sentencesTotal":{
+			"English":"Total Sentences",
+			"Français":"Phrases prononcées",
+			"Spanish":"Frase totales",
+			"Portugese":"",
+			"Deutsch":""
+		},
+		"permVerification":{
+			"English":"Permissions verification",
+			"Français":"Vérification des permissions",
+			"Spanish":"Verificación de permisos",
+			"Portugese":"",
+			"Deutsch":""
+		},
+		"vocalPreparation":{
+			"English":"Vocal system preparation",
+			"Français":"Préparation du système vocal",
+			"Spanish":"Preparación del sistema vocal",
+			"Portugese":"",
+			"Deutsch":""
+		},
+		"launchingTraining":{
+			"English":"Launching Training",
+			"Français":"Lancement de l'entraînement",
+			"Spanish":"Lanzamiento del entrenamiento",
+			"Portugese":"",
+			"Deutsch":""
+		},
+		"vocalSentences":{
+			"skip":{
+				"English":"Sentence skipped",
+				"Français":"Phrase passée",
+				"Spanish":"Sentencia omitida",
+				"Portugese":"Sentença ignorada",
+				"Deutsch":"Satz übersprungen"
+			},
+			"translate":{
+				"English":"The translation is: ",
+				"Français":"La traduction est: ",
+				"Spanish":"La traducción es: ",
+				"Portugese":"A tradução é: ",
+				"Deutsch":"Die Übersetzung ist: "
+			},
+			"good":{
+				"English":"Good",
+				"Français":"Bien",
+				"Spanish":"Bien",
+				"Portugese":"Bem",
+				"Deutsch":"Gut"
+			},
+			"bad1":{
+				"English":"I heard ",
+				"Français":"J'ai entendu ",
+				"Spanish":"He oído ",
+				"Portugese":"Ouvi ",
+				"Deutsch":"Ich habe gehört "
+			},
+			"bad2":{
+				"English":". Try again",
+				"Français":". Essaie encore",
+				"Spanish":". Inténtalo de nuevo",
+				"Portugese":". Tente novamente",
+				"Deutsch":". Versuchen Sie es erneut "
+			},
+			"endedTraining1":{
+				"English":"Training finished. You pronounced ",
+				"Français":"Entraînement terminé. Tu as prononcé ",
+				"Spanish":"Entrenamiento terminado. Pronunciaste ",
+				"Portugese":"Formação concluída. você pronunciada ",
+				"Deutsch":"Ausbildung abgeschlossen. Sie ausgesprochen "
+			},
+			"endedTraining2":{
+				"English":" sentences correctly and you had to repeat",
+				"Français":" phrases correctement et tu as dû répêter à ",
+				"Spanish":" oraciones correctamente y tuviste que repetir ",
+				"Portugese":"frases corretamente e você teve que repetir ",
+				"Deutsch":"Sätze richtig, und Sie mussten "
+			},
+			"endedTraining3":{
+				"English":" times.",
+				"Français":" reprise.",
+				"Spanish":" veces.",
+				"Portugese":"vezes.",
+				"Deutsch":"-mal zu wiederholen,"
+			}
+		}
+	}
+}

@@ -1,0 +1,27 @@
+<ion-view>
+  <ion-content scroll="false">
+        <div class="backHome">
+      <button class="button icon ion-home" ui-sref="home"></button>
+    </div>
+    <div class="statsContainer">
+      <h1>{{$root.dT.stats.title[$root.displayLang]}}</h1>
+      <div class="statsBlock" ng-show="bestScore.score">
+        <span class="title">{{$root.dT.stats.bestScore[$root.displayLang]}}</span>
+        <div class="score"><span class="value">{{bestScore.score | number:0}}</span></div>
+        <div class="line"><span>{{$root.dT.stats.dateBS[$root.displayLang]}}</span><span class="value">{{bestScore.date | date:longdate}}</span></div>
+        <div class="line"><span>{{$root.dT.stats.sentencesGoodBS[$root.displayLang]}}</span><span class="value">{{bestScore.good}}</span></div>
+        <div class="line"><span>{{$root.dT.stats.sentencesTotalBS[$root.displayLang]}}</span><span class="value">{{bestScore.good+$bestScore.bad}}</span></div>
+      </div>
+      <div class="statsBlock" ng-hide="bestScore.score">
+        <span class="title">{{$root.dT.stats.noBS[$root.displayLang]}}</span>
+        <div class="line"><span>{{$root.dT.stats.cbLaterBS[$root.displayLang]}}</span></div>
+      </div>
+      <div class="statsBlock utilisation">
+        <span class="title">{{$root.dT.stats.utilisation[$root.displayLang]}}</span>
+        <div class="line"><span>{{$root.dT.stats.sentencesTotal[$root.displayLang]}}</span><span class="value">{{pronouncedSentences}}</span></div>
+        <div class="line"><span>{{$root.dT.stats.trainingsEnded[$root.displayLang]}}</span><span class="value">{{trainingsEnded}}</span></div>
+        <div class="line"><span>{{$root.dT.stats.timeTotal[$root.displayLang]}}</span><span class="value">{{utilisationTime}} min</span></div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

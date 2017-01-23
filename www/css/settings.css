@@ -1,0 +1,77 @@
+.settings{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
+	height: 100vh;	
+	padding: 4vh 0vh 0vh 0vh;
+
+}
+.settingsBlock{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.settingsBlock h2{
+	background-color: #FFFFFF;
+	margin-bottom: 0;
+	padding: 1.5vh;
+	padding-top: 3vh;
+	width: 85vw;
+	font-size: 1.5em;
+	text-align: center;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+.settingsBlock .language{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: #FFFFFF;
+	width: 85vw;
+	padding-bottom: 2vh;
+	border-bottom: 1px solid #00A388;
+}
+.settingsBlock .language span{
+	font-size: 1.5em;
+	color:#00A388;
+	font-weight: 300;
+}
+.settingsBlock .language button{
+	font-size: 0.8em;
+	margin-top: 1.5vh;
+	background-color: #00A388;
+	color:#FFFFFF;
+	border:none;
+	border-radius: 20px;
+	padding: 3%;
+}
+.settingsBlock .TTSSpeed{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 85vw;
+	background-color: #FFFFFF;
+	padding-bottom: 3vh;
+	border-bottom: 1px solid #00A388;
+	font-weight: 300;
+}
+.settingsBlock .item{
+	background-color: #FFFFFF;
+	color: #00A388;
+	padding: 0% 5% 0% 5%;
+	border-radius: 3px;
+	width: 75vw;
+	font-size: 1em;	
+}
+.settings .saveButton{
+	background-color: #00A388;
+	border: none;
+	outline: none;
+	color: #FFFFFF;
+	padding: 5% 20% 5% 20%;
+	border-radius: 3px;
+	font-size: 2em;
+	font-weight: 300;
+	border:1px solid #FFFFFF;
+}

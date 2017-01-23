@@ -1,0 +1,74 @@
+.statsContainer{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	padding-top: 30px;
+}
+.statsBlock{
+	margin-top: 30px;
+	/*background-color: #00A388;*/
+	background-color: #FFFFFF;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	border-bottom:1px solid #00A388;
+	width: 80%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding-bottom: 10px;
+}
+.utilisation{
+	background-color: #FFFFFF;
+	border-bottom:1px solid #8277c6;
+}
+.statsBlock .title{
+	margin-top: 4px;
+	margin-bottom: 10px;
+	padding:3vw 0 3vw 0vw;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 2em;
+	font-weight: 300;
+	line-height: 1em;
+	width: calc(100% - 8px);
+	background-color: #FFFFFF;
+	color:#00A388;
+	text-align: center;
+}
+.statsBlock .score{
+	background-image: url("../img/coin.png");
+	background-position:center center;
+	background-size: cover;
+	height: 90px;
+	width: 90px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 4vh;
+	text-align: center;
+	color:#00A388;
+	font-size:1.5em;
+	font-weight: 500;
+}
+.utilisation .title{
+	color:#8277c6;
+}
+.statsBlock .line{
+	padding: 3px;
+	display: flex;
+	justify-content: space-between;
+	width: 90%;
+	font-size: 1.2em;
+
+	font-weight: 300;
+}
+.statsBlock .line .value{
+	font-weight: 500;
+	color:#00A388;
+}
+.statsContainer .utilisation .line .value{
+	color:#8277c6;
+}
