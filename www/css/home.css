@@ -2,24 +2,31 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: center;
+	justify-content: space-around;
+	padding: 5vh 0vh 15vh 0vh;
 	height: 100vh;
 }
-.homeActions{
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	margin: 5vh 0vh 0vh 0vh;
-	width: 80vw;
+.home .logo{
+	background-image: url('/img/icon.png');
+	background-size: cover;
+	width: 70px;
+	height: 70px;
+	transform: translate(0,-35%);
+	position: fixed;
+	top: 5vh;
+	z-index: 1;
+}
+.home h1{
+	/*margin: 0;*/
 }
 
 .homeActions button{
 	background-color: #00A388;
 	color:#FFFFFF;
-	width: 45vh;
-	height: 45vh;
+	width: 85vw;
+	height: 85vw;
 	padding: 5%;
-	font-size: 2.2em;
+	font-size: 2.5em;
 	font-weight: 300;
 	border:3px solid #FFFFFF;
 	border-radius: 50%;

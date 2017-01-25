@@ -5,9 +5,9 @@
       <div class="settingsBlock">
         <h2>{{$root.dT.settings.originLanguage[$root.displayLang]}}</h2>
         <div class="language originLanguage">
-          <span ng-show="languages.originLang.lang">{{languages.originLang.lang}}</span>
-          <button ng-show="languages.originLang.lang" ng-click="changeOriginLang()">{{$root.dT.settings.change[$root.displayLang]}}</button>
-          <select ng-model="languages.originLang" ng-hide="languages.originLang.lang" >
+          <span ng-hide="originLangModified">{{languages.originLang.lang}}</span>
+          <button ng-hide="originLangModified" ng-click="changeOriginLang()">{{$root.dT.settings.change[$root.displayLang]}}</button>
+          <select ng-model="languages.originLang" ng-show="originLangModified" >
             <option ng-repeat="(key, lang) in availableLangOrigin" value="{{lang}}">{{lang.lang}}</option>
           </select>
         </div>
@@ -26,6 +26,10 @@
             <input type="range" ng-model="languages.speed" name="speed" min="5" max="10" value="10">
             <span>{{$root.dT.settings.regular[$root.displayLang]}}</span>
           </div>
+        </div>
+        <div class="misc">
+          <span>Epeler les phrases</span>
+           <ion-toggle class="toggle" ng-model="spell.checked" ng-checked="spell.checked"></ion-toggle>
         </div>
       </div>
       <button class="button saveButton" ng-click="save()">{{$root.dT.settings.save[$root.displayLang]}}</button>

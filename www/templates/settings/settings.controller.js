@@ -1,24 +1,29 @@
 angular.module('starter')
-.controller('settingsCtrl', function ($scope,$ionicPlatform,$state,$rootScope) {
-	var originLangModified=false;
-	var destLangModified=false;
+.controller('settingsCtrl', function ($scope,$ionicPlatform,$state,$rootScope,$localstorage) {
+
 	$ionicPlatform.ready(function() {
 		$scope.languages={}
 		$scope.languages.originLang=$rootScope.originLang;
-		console.log(JSON.stringify($rootScope.originLang))
+		// console.log(JSON.stringify($rootScope.originLang))
 		if($rootScope.originLang){
 		 $scope.defaultOriginLang=$rootScope.originLang.lang;
 		}
 		else{
-			originLangModified=true;
+			$scope.originLangModified=true;
 		}
 		if($rootScope.destLang){
 			$scope.languages.destLang=$rootScope.destLang;
 		}
 		else{
-			destLangModified=true;
+			$scope.destLangModified=true;
 		}
+		$scope.spell={}
+		if($rootScope.spellSentences === 'true')
+		$scope.spell.checked=true;
+		// console.log(typeof $scope.spell.checked)
 		$scope.languages.speed=$rootScope.ttsSpeed*10;
+			// $scope.spellSentences={checked:true}
+
 		// console.log(JSON.stringify($scope.languages.originLang.lang))
 		// window.plugins.speechRecognition.getSupportedLanguages(function(result){
 			$scope.availableLang=[];
@@ -41,32 +46,42 @@ angular.module('starter')
 			// 	$scope.availableLang.push({lang:"Portugese",code:"pt-PT"})	
 			// }
 			// console.log(JSON.stringify($scope.availableLang))
-			$scope.languages.speed=window.localStorage.getItem("ttsspeed")*10||10
+			$scope.languages.speed=$localstorage.get("ttsspeed")*10||10
 		// },function(){})
 	})
 	$scope.changeOriginLang = function(){
-		$scope.languages.originLang=undefined;
-		originLangModified=true;
+		// $scope.languages.originLang=undefined;
+		$scope.originLangModified=true;
 	}
 	$scope.changeDestLang = function(){
-		$scope.languages.destLang=undefined;
-		destLangModified=true;
+		// $scope.languages.destLang=undefined;
+		$scope.destLangModified=true;
 	}
+	$scope.spellToggle={};
 	$scope.save = function(){
-		console.log("save")
-		console.log($scope.languages.originLang)
-		console.log($scope.languages.destLang)
-		console.log($scope.languages.speed)
-		if (originLangModified){
-			window.localStorage.setItem( "originlang", $scope.languages.originLang );
+		 console.log(JSON.stringify($scope.spell))
+		 console.log("save")
+		// console.log(typeof $scope.languages.originLang)
+		// console.log(typeof $scope.languages.destLang)
+		// console.log($scope.languages.speed)
+		if ($scope.originLangModified){
+			$localstorage.setObject("originlang", JSON.parse($scope.languages.originLang) );
 			$rootScope.originLang=$scope.languages.originLang
 			$rootScope.displayLang=$rootScope.originLang.lang
 		}
-		if(destLangModified){
-			window.localStorage.setItem( "destlang", $scope.languages.destLang );
+		if($scope.destLangModified){
+			$localstorage.setObject( "destlang", JSON.parse($scope.languages.destLang) );
 			$rootScope.destLang=$scope.languages.destLang
 		}
-		window.localStorage.setItem( "ttsspeed", $scope.languages.speed/10 );
+		if(($scope.spell)&&($scope.spell.checked === true)){
+			$localstorage.set( "spell", 'true' );
+			$rootScope.spellSentences=true;
+		}
+		else{
+			$localstorage.set( "spell", 'false' );
+			$rootScope.spellSentences=false;	
+		}
+		$localstorage.set( "ttsspeed", $scope.languages.speed/10 );
 		$rootScope.ttsSpeed=$scope.languages.speed/10
 		$state.go("home", {}, { reload: true })
 	}

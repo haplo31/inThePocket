@@ -15,8 +15,9 @@
 .settingsBlock h2{
 	background-color: #FFFFFF;
 	margin-bottom: 0;
-	padding: 1.5vh;
-	padding-top: 3vh;
+	margin-top: 1vh;
+	padding: 1vh;
+	padding-top: 1.5vh;
 	width: 85vw;
 	font-size: 1.5em;
 	text-align: center;
@@ -29,7 +30,7 @@
 	align-items: center;
 	background-color: #FFFFFF;
 	width: 85vw;
-	padding-bottom: 2vh;
+	padding-bottom: 1.5vh;
 	border-bottom: 1px solid #00A388;
 }
 .settingsBlock .language span{
@@ -39,7 +40,7 @@
 }
 .settingsBlock .language button{
 	font-size: 0.8em;
-	margin-top: 1.5vh;
+	margin-top: 1vh;
 	background-color: #00A388;
 	color:#FFFFFF;
 	border:none;
@@ -52,17 +53,47 @@
 	align-items: center;
 	width: 85vw;
 	background-color: #FFFFFF;
-	padding-bottom: 3vh;
+	padding-bottom: 1.5vh;
 	border-bottom: 1px solid #00A388;
 	font-weight: 300;
 }
 .settingsBlock .item{
 	background-color: #FFFFFF;
 	color: #00A388;
-	padding: 0% 5% 0% 5%;
-	border-radius: 3px;
+	padding: 0% 3% 0% 3%;
+	border:none;
 	width: 75vw;
-	font-size: 1em;	
+	font-size: 0.9em;	
+}
+.settingsBlock .item span{
+	width: 25%;
+	text-align: center;
+}
+.settingsBlock .misc{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 85vw;
+	background-color: #FFFFFF;
+	padding-bottom: 1.5vh;
+	border-bottom: 1px solid #00A388;
+	font-weight: 300;
+	padding: 0% 5% 0% 5%;
+	height: 8vh;
+	margin-top: 1vh;
+}
+.settingsBlock .misc span{
+	width: 100%;
+}
+.settingsBlock .misc .toggle{
+	border:none;
+	height: 50px;
+	background-color: rgba(0,0,0,0);
+	/*background-color: blue;*/
+	/*margin: 0;*/
+	/*padding: 0;*/
+	/*display: flex;*/
+	/*align-items: center;*/
 }
 .settings .saveButton{
 	background-color: #00A388;

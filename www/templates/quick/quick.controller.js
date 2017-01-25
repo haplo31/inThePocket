@@ -2,23 +2,23 @@ angular.module('starter')
 .controller('quickCtrl', function ($scope,$timeout,$http,$rootScope,$interval,$localstorage) {
 
 
-		$http.get('appdata/displayText.json')
-  .success(function (data) {
-      // The json data will now be in scope.
-      $rootScope.dT = data;
-  });
-	  var originLang=$localstorage.get( "originlang");
-  var destLang=$localstorage.get( "destlang");
-  var ttsSpeed=$localstorage.get( "ttsspeed");
-  // console.log(JSON.parseoriginLang)
-  // console.log(destLang)
-  if ((originLang) && (destLang) && (ttsSpeed)){
-  	$rootScope.originLang=JSON.parse(originLang)
-  	$rootScope.displayLang=$rootScope.originLang.lang;	
-  	$rootScope.destLang=JSON.parse(destLang)
-  	$rootScope.ttsSpeed=ttsSpeed
-  }
-	$rootScope.displayLang="English"
+	// 	$http.get('appdata/displayText.json')
+ //  .success(function (data) {
+ //      // The json data will now be in scope.
+ //      $rootScope.dT = data;
+ //  });
+	//   var originLang=$localstorage.get( "originlang");
+ //  var destLang=$localstorage.get( "destlang");
+ //  var ttsSpeed=$localstorage.get( "ttsspeed");
+ //  // console.log(JSON.parseoriginLang)
+ //  // console.log(destLang)
+ //  if ((originLang) && (destLang) && (ttsSpeed)){
+ //  	$rootScope.originLang=JSON.parse(originLang)
+ //  	$rootScope.displayLang=$rootScope.originLang.lang;	
+ //  	$rootScope.destLang=JSON.parse(destLang)
+ //  	$rootScope.ttsSpeed=ttsSpeed
+ //  }
+	// $rootScope.displayLang="English"
 
 
 
@@ -55,7 +55,7 @@ angular.module('starter')
 		$localstorage.setObject("topics",$scope.topics)
 	}
 
-	$scope.difficulty="medium";
+	$scope.difficulty="easy";
 	$scope.training={
 		duration:0
 	}
@@ -87,7 +87,22 @@ angular.module('starter')
 	        rate: $rootScope.ttsSpeed
 	    },
 	    function(){
-	    	launchSpeechReco(text);
+	    	if ($rootScope.spellSentences === 'true'){
+		    	$timeout(function(){
+			    	var spell=text[$rootScope.destLang.lang].replace(' ','|').split('').join(' ; ').replace('|',$rootScope.dT.quick.space[$rootScope.originLang.lang])
+						TTS.speak({
+				        text: spell,
+				        locale: $rootScope.originLang.code,
+				        rate: $rootScope.ttsSpeed
+				    },
+				    function(){
+				    	launchSpeechReco(text);
+				    },function(){})	    	
+		    	},800)
+	    	}
+	    	else{
+	    		launchSpeechReco(text);
+	    	}
 	    },
 	    function(){
 	    	console.log("error on tts:"+text)
@@ -106,6 +121,7 @@ angular.module('starter')
 	  		$scope.recognizedText=result[0].toLowerCase();
 	  		var tempResult= result[0].toLowerCase();
 	  		var tempText= text[$rootScope.destLang.lang].toLowerCase();
+	  		console.log(JSON.stringify(result))
 	  		$scope.$apply()
 
 	  		if(tempResult.indexOf($rootScope.dT.quick.skip[$rootScope.destLang.lang].toLowerCase())>=0){   			
@@ -184,7 +200,13 @@ angular.module('starter')
 	  	},
 	  	function(error){
 	  		console.log("error on Speech reco"+error)
-	  		$timeout(function(){if($scope.trainingLaunched){launchSpeechReco(text)}},3000)
+	  		TTS.speak({
+        	text: $rootScope.dT.quick.vocalSentences.errorReco[$rootScope.originLang.lang],
+        	locale: $rootScope.originLang.code,
+        	rate: $rootScope.ttsSpeed
+    		},function(){
+    			$timeout(function(){if($scope.trainingLaunched){textToSpeech($scope.currentSentence)}},1000)
+    		},function(){})
 	  	},
 	  	options)
 		},200)		
@@ -203,9 +225,15 @@ angular.module('starter')
 		var newTrainingsEnded= $localstorage.get("trainingsended");
 		newTrainingsEnded++;
 		$localstorage.set( "trainingsended", newTrainingsEnded);
-		var trainingHistory= $localstorage.get("traininghistory")
-		trainingHistory.push({date:Date.now(),score:currentScore,good:$scope.good,skip:$scope.skip,bad:$scope.bad})
-		$localstorage.set("traininghistory",trainingHistory);
+		var trainingHistory= $localstorage.getObject("traininghistory")
+		if(trainingHistory.trainings){
+			trainingHistory.trainings.push({date:Date.now(),score:currentScore,good:$scope.good,skip:$scope.skip,bad:$scope.bad})
+		}
+		else{
+			trainingHistory.trainings=[];
+			trainingHistory.trainings.push({date:Date.now(),score:currentScore,good:$scope.good,skip:$scope.skip,bad:$scope.bad})
+		}
+		$localstorage.setObject("traininghistory",trainingHistory);
 		$scope.trainingLaunched=false;
 		$scope.trainingLaunching=false;
 		$scope.trainingEnded=true;
@@ -288,7 +316,7 @@ angular.module('starter')
     				},function(){
     					$timeout(function(){
     						TTS.speak({
-					        text: $rootScope.dT.quick.launchingTraining[$rootScope.displayLang],
+					        text: $rootScope.dT.quick.vocalSentences.instructions[$rootScope.displayLang],
 					        locale: $rootScope.originLang.code,
 					        rate: 1
 		    				},function(){
@@ -334,9 +362,15 @@ angular.module('starter')
 		var newTrainingsEnded= $localstorage.get("trainingsended");
 		newTrainingsEnded++;
 		$localstorage.set( "trainingsended", newTrainingsEnded);
-		var trainingHistory= $localstorage.get("traininghistory")
-		trainingHistory.push({date:Date.now(),score:currentScore,good:$scope.good,skip:$scope.skip,bad:$scope.bad})
-		$localstorage.set("traininghistory",trainingHistory);
+		var trainingHistory= $localstorage.getObject("traininghistory")
+				if(trainingHistory.trainings){
+			trainingHistory.trainings.push({date:Date.now(),score:currentScore,good:$scope.good,skip:$scope.skip,bad:$scope.bad})
+		}
+		else{
+			trainingHistory.trainings=[];
+			trainingHistory.trainings.push({date:Date.now(),score:currentScore,good:$scope.good,skip:$scope.skip,bad:$scope.bad})
+		}
+		$localstorage.setObject("traininghistory",trainingHistory);
 		$scope.trainingLaunched=false;
 		$scope.trainingLaunching=false;
 		$scope.trainingEnded=true;

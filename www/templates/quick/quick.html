@@ -35,12 +35,12 @@
  				<input type="radio" ng-model="difficulty" ng-value="'easy'">
   			{{$root.dT.quick.easy[$root.displayLang]}}
   			</label>
-  			<label class="block" ng-class="{difficultySelected:difficulty === 'medium'}">
- 				<input type="radio" ng-model="difficulty" ng-value="'medium'">
+  			<label class="block disabledDifficulty" ng-class="{difficultySelected:difficulty === 'medium'}">
+ 				<input type="radio" ng-model="difficulty" ng-value="'medium'" disabled='disabled'>
   			{{$root.dT.quick.medium[$root.displayLang]}}
   			</label>
-  			<label class="block" ng-class="{difficultySelected:difficulty === 'hard'}">
- 				<input type="radio" ng-model="difficulty" ng-value="'hard'">
+  			<label class="block disabledDifficulty" ng-class="{difficultySelected:difficulty === 'hard'}" disabled>
+ 				<input type="radio" ng-model="difficulty" ng-value="'hard'" disabled='disabled'>
   			{{$root.dT.quick.hard[$root.displayLang]}}
   			</label>
  			</div>

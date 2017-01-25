@@ -4,14 +4,15 @@ angular.module('starter')
 		console.log("Home")
 		// console.log(JSON.stringify($rootScope.originLang))
   	// console.log(JSON.stringify($rootScope.destLang))
-		var originLang=$localstorage.get( "originlang");
-	  var destLang=$localstorage.get( "destlang");
+		var originLang=$localstorage.getObject( "originlang");
+	  var destLang=$localstorage.getObject( "destlang");
 	  var ttsSpeed=$localstorage.get( "ttsspeed");
+	  var spellSentences=$localstorage.get("spell")
 	  // console.log(JSON.parse(originLang))
 	  // console.log(originLang)
 	  // console.log(destLang)
 	  // console.log(ttsSpeed)
-	  if ((!originLang) && (!destLang) && (!ttsSpeed)){
+	  if ((originLang=== {}) || (destLang === {}) || (!ttsSpeed)){
 	  	console.log("notFound")
 	  	var langCode=window.navigator.language;
 			switch(langCode){
@@ -38,11 +39,13 @@ angular.module('starter')
 	  }
 	  else{
 			console.log("found")
-	  	console.log(originLang)
-	  	$rootScope.originLang=JSON.parse(originLang)
-	  	$rootScope.displayLang=$rootScope.originLang.lang;	
-	  	$rootScope.destLang=JSON.parse(destLang)
+	  	console.log(typeof originLang)
+	  	$rootScope.originLang=originLang
+	  	$rootScope.displayLang=$rootScope.originLang.lang;
+	  	console.log(originLang.lang)	
+	  	$rootScope.destLang=destLang
 	  	$rootScope.ttsSpeed=ttsSpeed
+	  	$rootScope.spellSentences=spellSentences
 		}
 		$http.get('appdata/displayText.json')
   	.success(function (data) {

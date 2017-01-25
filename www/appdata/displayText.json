@@ -319,7 +319,7 @@
 		},
 		"bestScore":{
 			"English":"You beat your best score!",
-			"Français":"Tu as battu ton meilleur score!",
+			"Français":"Vous avez battu votre meilleur score!",
 			"Spanish":"Mejor puntaje!",
 			"Portugese":"",
 			"Deutsch":""
@@ -415,7 +415,28 @@
 			"Portugese":"",
 			"Deutsch":""
 		},
+		"space":{
+			"English":" space ",
+			"Français":" espace ",
+			"Spanish":"",
+			"Portugese":"",
+			"Deutsch":""
+		},
 		"vocalSentences":{
+			"instructions":{
+				"English":"Don't forget wait for the bip before talking.",
+				"Français":"N'oubliez pas d'attendre le bip avant de répéter.",
+				"Spanish":"",
+				"Portugese":"",
+				"Deutsch":""
+			},
+			"errorReco":{
+				"English":"I didn't understand, try to find somewhere quiet and wait for the bip before talking.",
+				"Français":"Je n'ai pas compris, essayez de vous éloigner des sources de bruits et attendez le bip pour répéter.",
+				"Spanish":"",
+				"Portugese":"",
+				"Deutsch":""
+			},
 			"skip":{
 				"English":"Sentence skipped",
 				"Français":"Phrase passée",
@@ -445,22 +466,22 @@
 				"Deutsch":"Ich habe gehört "
 			},
 			"bad2":{
-				"English":". Try again",
-				"Français":". Essaie encore",
-				"Spanish":". Inténtalo de nuevo",
-				"Portugese":". Tente novamente",
-				"Deutsch":". Versuchen Sie es erneut "
+				"English":"Try again",
+				"Français":"Essaie encore",
+				"Spanish":"Inténtalo de nuevo",
+				"Portugese":"Tente novamente",
+				"Deutsch":"Versuchen Sie es erneut "
 			},
 			"endedTraining1":{
 				"English":"Training finished. You pronounced ",
-				"Français":"Entraînement terminé. Tu as prononcé ",
+				"Français":"Entraînement terminé. Vous avez prononcé ",
 				"Spanish":"Entrenamiento terminado. Pronunciaste ",
 				"Portugese":"Formação concluída. você pronunciada ",
 				"Deutsch":"Ausbildung abgeschlossen. Sie ausgesprochen "
 			},
 			"endedTraining2":{
 				"English":" sentences correctly and you had to repeat",
-				"Français":" phrases correctement et tu as dû répêter à ",
+				"Français":" phrases correctement et vous avez dû répêter à ",
 				"Spanish":" oraciones correctamente y tuviste que repetir ",
 				"Portugese":"frases corretamente e você teve que repetir ",
 				"Deutsch":"Sätze richtig, und Sie mussten "
